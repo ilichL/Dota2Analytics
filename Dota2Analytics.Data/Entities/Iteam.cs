@@ -20,5 +20,7 @@ namespace Dota2Analytics.Data.Entities
         public int? RecipeCost { get; set; }
         public int? ManaCost { get; set; }
         public int? Сooldown {  get; set; }
+        public int? MatchPlayerId { get; set; }
+        public MatchPlayer? MatchPlayer { get; set; }
     }
 }

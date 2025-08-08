@@ -8,31 +8,33 @@ namespace Dota2Analytics.Data.Entities
 {
     public class MatchPlayer
     {
+        public int? Kills { get; set; }
+        public int? Deth {  get; set; }
+        public int? Assists { get; set; }
+        public int? BuildingDamage { get; set; }
+        public int? HeroDamage { get; set; }
+        public int? DamageRecivedRaw { get; set; }
+        public int? DamageRecivedReduced {  get; set; }
+        public int Pick { get; set; }//какой по счету пикнули героя
+        public int? SupportGoldSpent { get; set; }
+        public int? CampsStacked { get; set; }//стакнуто кемпов
+        public int NetWorth { get; set; }//общая ценность 
+        public int? CreepsLastHit { get; set; }//добито крипов
+        public int? CreepsDenies { get; set; }
+        public int? BountyRunes { get; set; }
+        public int Gpm {  get; set; }//gold per minute
+        public int Xpm { get; set; }// Experienceper minute
+        public int? OutpostCaptured { get; set; }//захваченные аванпосты
+        public int? Heal { get; set; }//хил тимейтам 
+        public int? PlayerLevel { get; set; }
+        public int? MatchId { get; set; }
+        public Match? Match { get; set; }
         public int PlayerId { get; set; }
         public Player Player { get; set; }
         public int HeroId { get; set; }
         public Hero Hero { get; set; }
-        public int? Kills { get; set; }
-        public int? Deth {  get; set; }
-        public int? Assists { get; set; }
-        public int BuildingDamage { get; set; }
-        public int HeroDamage { get; set; }
-        public int DamageRecivedRaw { get; set; }
-        public int DamageRecivedReduced {  get; set; }
-        public int Pick { get; set; }//какой по счету пикнули героя
-        public List<Iteam> SupportContribution { get; set; }//варды, смоки 
-        public int SupportGoldSpent { get; set; }
-        public int CampsStacked { get; set; }//стакнуто кемпов
-        public int NetWorth { get; set; }//общая ценность 
-        public int CreepsLastHit { get; set; }//добито крипов
-        public int CreepsDenies { get; set; }
-        public int BountyRunes { get; set; }
-        public int Gpm {  get; set; }//gold per minute
-        public int Xpm { get; set; }// Experienceper minute
-        public int OutpostCaptured { get; set; }//захваченные аванпосты
-        public int Heal { get; set; }//хил тимейтам 
-        public int PlayerLevel { get; set; }
         public List<Iteam>? Iteams { get; set; }
-        
+        public List<Iteam>? SupportContribution { get; set; }//варды, смоки 
+
     }
 }

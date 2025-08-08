@@ -9,10 +9,10 @@ namespace Dota2Analytics.Data.Entities
 {
     public class MatchEvent : BaseEntity
     {
+        public string EventType { get; set; }//саппорт, рошан, сломанный тавер и т д
+        public string? Data { get; set; }
         public int MatchId { get; set; }
         public Match Match { get; set; }
-        public string EventType { get; set; }//саппорт, рошан, сломанный тавер, 
-        public List<Player> Players { get; set; }
-        public string Data { get; set; }
+        public List<Player>? Players { get; set; }
     }
 }

@@ -3,40 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\dotacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\dotacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9A1FFE3D-2EEF-48E6-A144-148CA60B9D29}|Dota2Analytics\\Dota2Analytics.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9A1FFE3D-2EEF-48E6-A144-148CA60B9D29}|Dota2Analytics\\Dota2Analytics.csproj|solutionrelative:dota2analytics\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\herostats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\herostats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A57FA5C6-351B-43FB-BA31-18D14CB75F0C}|Dota2Analytics.Infrastructure\\Dota2Analytics.Infrastructure.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.infrastructure\\repositories\\abstractions\\irepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A57FA5C6-351B-43FB-BA31-18D14CB75F0C}|Dota2Analytics.Infrastructure\\Dota2Analytics.Infrastructure.csproj|solutionrelative:dota2analytics.infrastructure\\repositories\\abstractions\\irepositorybase.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\matchevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\matchevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\migrations\\20250811120116_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\migrations\\20250811120116_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\match.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{9A1FFE3D-2EEF-48E6-A144-148CA60B9D29}|Dota2Analytics\\Dota2Analytics.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{9A1FFE3D-2EEF-48E6-A144-148CA60B9D29}|Dota2Analytics\\Dota2Analytics.csproj|solutionrelative:dota2analytics\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\iteam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\iteam.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\matchplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\matchplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\hero.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\herostats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\herostats.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\skill.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\dotacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\dotacontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|c:\\users\\ilich\\onedrive\\\u0440\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\dota2analytics\\dota2analytics.data\\entities\\matchevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D1E147D3-E6C8-4902-A600-22C61761917A}|Dota2Analytics.Data\\Dota2Analytics.Data.csproj|solutionrelative:dota2analytics.data\\entities\\matchevent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -46,24 +46,77 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "IRepositoryBase.cs",
+              "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Infrastructure\\Repositories\\Abstractions\\IRepositoryBase.cs",
+              "RelativeDocumentMoniker": "Dota2Analytics.Infrastructure\\Repositories\\Abstractions\\IRepositoryBase.cs",
+              "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Infrastructure\\Repositories\\Abstractions\\IRepositoryBase.cs",
+              "RelativeToolTip": "Dota2Analytics.Infrastructure\\Repositories\\Abstractions\\IRepositoryBase.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-12T07:17:33.283Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "20250811120116_Init.cs",
+              "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Migrations\\20250811120116_Init.cs",
+              "RelativeDocumentMoniker": "Dota2Analytics.Data\\Migrations\\20250811120116_Init.cs",
+              "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Migrations\\20250811120116_Init.cs",
+              "RelativeToolTip": "Dota2Analytics.Data\\Migrations\\20250811120116_Init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T12:01:16.726Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics\\appsettings.json",
+              "RelativeDocumentMoniker": "Dota2Analytics\\appsettings.json",
+              "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics\\appsettings.json",
+              "RelativeToolTip": "Dota2Analytics\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-11T11:40:29.431Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics\\Program.cs",
+              "RelativeDocumentMoniker": "Dota2Analytics\\Program.cs",
+              "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics\\Program.cs",
+              "RelativeToolTip": "Dota2Analytics\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-11T11:37:42.297Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "DotaContext.cs",
               "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\DotaContext.cs",
               "RelativeDocumentMoniker": "Dota2Analytics.Data\\DotaContext.cs",
               "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\DotaContext.cs",
               "RelativeToolTip": "Dota2Analytics.Data\\DotaContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-08T08:25:48.914Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-08T08:25:48.914Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 6,
               "Title": "HeroStats.cs",
               "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\HeroStats.cs",
               "RelativeDocumentMoniker": "Dota2Analytics.Data\\Entities\\HeroStats.cs",
@@ -71,12 +124,11 @@
               "RelativeToolTip": "Dota2Analytics.Data\\Entities\\HeroStats.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-07T09:35:56.26Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-07T09:35:56.26Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
               "Title": "MatchEvent.cs",
               "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\MatchEvent.cs",
               "RelativeDocumentMoniker": "Dota2Analytics.Data\\Entities\\MatchEvent.cs",
@@ -84,8 +136,7 @@
               "RelativeToolTip": "Dota2Analytics.Data\\Entities\\MatchEvent.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T09:04:34.5Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-06T09:04:34.5Z"
             },
             {
               "$type": "Document",
@@ -95,75 +146,21 @@
               "RelativeDocumentMoniker": "Dota2Analytics.Data\\Entities\\MatchPlayer.cs",
               "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\MatchPlayer.cs",
               "RelativeToolTip": "Dota2Analytics.Data\\Entities\\MatchPlayer.cs",
-              "ViewState": "AgIAABcAAAAAAAAAAAAmwB4AAAApAAAAAAAAAA==",
+              "ViewState": "AgIAABkAAAAAAAAAAAA8wCAAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T08:26:30.549Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Match.cs",
-              "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Match.cs",
-              "RelativeDocumentMoniker": "Dota2Analytics.Data\\Entities\\Match.cs",
-              "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Match.cs",
-              "RelativeToolTip": "Dota2Analytics.Data\\Entities\\Match.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAABTAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T08:25:02.169Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-06T08:26:30.549Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "Iteam.cs",
-              "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Iteam.cs",
-              "RelativeDocumentMoniker": "Dota2Analytics.Data\\Entities\\Iteam.cs",
-              "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Iteam.cs",
-              "RelativeToolTip": "Dota2Analytics.Data\\Entities\\Iteam.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAwBMAAAAsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T08:10:46.093Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Player.cs",
               "RelativeDocumentMoniker": "Dota2Analytics.Data\\Entities\\Player.cs",
               "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Player.cs",
               "RelativeToolTip": "Dota2Analytics.Data\\Entities\\Player.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAQwA0AAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBMAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-06T08:04:52.43Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Skill.cs",
-              "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Skill.cs",
-              "RelativeDocumentMoniker": "Dota2Analytics.Data\\Entities\\Skill.cs",
-              "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Skill.cs",
-              "RelativeToolTip": "Dota2Analytics.Data\\Entities\\Skill.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAAqwAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T10:24:55.674Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Hero.cs",
-              "DocumentMoniker": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Hero.cs",
-              "RelativeDocumentMoniker": "Dota2Analytics.Data\\Entities\\Hero.cs",
-              "ToolTip": "C:\\Users\\ilich\\OneDrive\\\u0420\u0430\u0431\u043E\u0447\u0438\u0439 \u0441\u0442\u043E\u043B\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Entities\\Hero.cs",
-              "RelativeToolTip": "Dota2Analytics.Data\\Entities\\Hero.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAqwCIAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-05T10:02:50.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-08-06T08:04:52.43Z"
             }
           ]
         }

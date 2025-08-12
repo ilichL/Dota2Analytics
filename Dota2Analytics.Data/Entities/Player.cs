@@ -18,7 +18,6 @@ namespace Dota2Analytics.Data.Entities
         public MatchEvent? MatchEvent { get; set; }
         public int? MathId { get; set; }
         public Match? Match { get; set; }
-        public int? MatchPlayerId { get; set; }
         public MatchPlayer? MatchPlayer { get; set; }
     }
 }

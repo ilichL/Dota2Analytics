@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Dota2Analytics.Data.Abstractions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Dota2Analytics.Data.Entities
 {
-    public class MatchPlayer
+    public class MatchPlayer : BaseEntity
     {
         public int? Kills { get; set; }
         public int? Deth {  get; set; }
@@ -33,8 +34,8 @@ namespace Dota2Analytics.Data.Entities
         public Player Player { get; set; }
         public int HeroId { get; set; }
         public Hero Hero { get; set; }
+        public List<string>? SupportContribution { get; set; }//варды, смоки 
         public List<Iteam>? Iteams { get; set; }
-        public List<Iteam>? SupportContribution { get; set; }//варды, смоки 
 
     }
 }

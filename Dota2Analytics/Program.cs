@@ -1,5 +1,7 @@
 using Dota2Analytics.Data;
 using Microsoft.EntityFrameworkCore;
+using Dota2Analytics.Infrastructure.Repositories.Abstractions;
+using Dota2Analytics.Infrastructure.Repositories.Implementations;
 
 namespace Dota2Analytics
 {
@@ -19,6 +21,9 @@ namespace Dota2Analytics
             builder.Services.AddDbContext<DotaContext>(options =>
                 options.UseNpgsql(connectionString));
 
+            builder.Services.AddScoped<IHeroRepository, HeroRepository>();
+            builder.Services.AddScoped<IIteamRepository, IteamRepository>();
+            builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
             // Строим приложение
             var app = builder.Build();
 

@@ -7,7 +7,8 @@ namespace Dota2Analytics.Data
     {
         public DbSet<Hero> Heroes { get; set; }
         public DbSet<HeroStats> HeroStats { get; set; }
-        public DbSet<Iteam> Iteams { get; set; }
+        public DbSet<Iteam> Items { get; set; }
+        public DbSet<ItemPurchase> ItemPurchases { get; set; }
         public DbSet<Match> Matches { get; set; }
         public DbSet<MatchEvent> MatchEvents { get; set; }
         public DbSet<MatchPlayer> MatchPlayers { get; set; }
@@ -15,5 +16,12 @@ namespace Dota2Analytics.Data
         public DbSet<Skill> Skills { get; set; }
         public DotaContext(DbContextOptions<DotaContext> options)
             : base((options)) { }
+
+        protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
+        {
+            configurationBuilder.Properties<Enum>()
+                .HaveConversion<int>()
+                .HaveColumnType("integer");
+        }//все enum в int для sql
     }
 }

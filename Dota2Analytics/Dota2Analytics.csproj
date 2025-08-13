@@ -22,6 +22,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Dota2Analytics.Data\Dota2Analytics.Data.csproj" />
+	<ProjectReference Include="..\Dota2Analytics.Infrastructure\Dota2Analytics.Infrastructure.csproj" /> 
   </ItemGroup>
 
 </Project>

@@ -17,7 +17,7 @@ namespace Dota2Analytics.Data.Entities
         public bool? Dispellable { get; set; }
         public bool? PiercesDebuffImmunity { get; set; }
         public int? ManaCost { get; set; }
-        public int? Сooldown { get; set; }
+        public int? Cooldown { get; set; }
         public string Description { get; set; }
         public Hero Hero { get; set; }
         public int HeroId { get; set; }

@@ -1,4 +1,5 @@
 ﻿using Dota2Analytics.Data.Abstractions;
+using Dota2Analytics.Data.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,11 @@ namespace Dota2Analytics.Data.Entities
     {
         public string Name { get; set; }
         public string? ImageUrl { get; set; }
-        public string Attribute { get; set; }//сила, ловкость, инетллект, универсал
-        public string AttackType { get; set; }
-        public string? Tag { get; set; }//контроль, стойкость, побег, инициация, быстрый урон, осада
-        public string? Role { get; set; }//керри, сап, мидер, 3ка
-        public string TalantTree { get; set; }
+        public HeroAttribute Attribute { get; set; }//сила, ловкость, инетллект, универсал
+        public AttackType AttackType { get; set; }//ближний/дальний
+        public HeroTag? HeroTag { get; set; }
+        public HeroRole? Role { get; set; }//керри, сап, мидер, 3ка
+        public string TalentTree { get; set; }
         public int Health { get; set; }
         public int Mana { get; set; }
         public int Strength { get; set; }//сила

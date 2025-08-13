@@ -13,7 +13,7 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 {
     public class RepositoryBase<TEntity> : IRepositoryBase<TEntity> where TEntity : BaseEntity
     {
-        private readonly DotaContext Context;//Db
+        protected readonly DotaContext Context;//Db
         
         public RepositoryBase(DotaContext context)
         {

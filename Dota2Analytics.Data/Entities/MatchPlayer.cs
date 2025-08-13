@@ -10,12 +10,12 @@ namespace Dota2Analytics.Data.Entities
     public class MatchPlayer : BaseEntity
     {
         public int? Kills { get; set; }
-        public int? Deth {  get; set; }
+        public int? Death {  get; set; }
         public int? Assists { get; set; }
         public int? BuildingDamage { get; set; }
         public int? HeroDamage { get; set; }
-        public int? DamageRecivedRaw { get; set; }
-        public int? DamageRecivedReduced {  get; set; }
+        public int? DamageReceivedRaw { get; set; }
+        public int? DamageReceivedReduced {  get; set; }
         public int Pick { get; set; }//какой по счету пикнули героя
         public int? SupportGoldSpent { get; set; }
         public int? CampsStacked { get; set; }//стакнуто кемпов
@@ -24,7 +24,7 @@ namespace Dota2Analytics.Data.Entities
         public int? CreepsDenies { get; set; }
         public int? BountyRunes { get; set; }
         public int Gpm {  get; set; }//gold per minute
-        public int Xpm { get; set; }// Experienceper minute
+        public int Xpm { get; set; }// Experience per minute
         public int? OutpostCaptured { get; set; }//захваченные аванпосты
         public int? Heal { get; set; }//хил тимейтам 
         public int? PlayerLevel { get; set; }
@@ -35,7 +35,6 @@ namespace Dota2Analytics.Data.Entities
         public int HeroId { get; set; }
         public Hero Hero { get; set; }
         public List<string>? SupportContribution { get; set; }//варды, смоки 
-        public List<Iteam>? Iteams { get; set; }
-
+        public List<ItemPurchase>? ItemPurchase { get; set; }
     }
 }

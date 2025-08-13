@@ -1,4 +1,5 @@
 ﻿using Dota2Analytics.Data.Abstractions;
+using Dota2Analytics.Data.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,9 @@ namespace Dota2Analytics.Data.Entities
     public class Match : BaseEntity
     {
         public string SteamMatchId { get; set; }
-        public int DierScore { get; set; }
+        public int DireScore { get; set; }
         public int RadiantScore { get; set; }
-        public string WinnerTeam { get; set; }
+        public Team WinnerTeam { get; set; }
         public int Duration { get; set; }
         public string Mode { get; set; }//турбо, ранкед и т д
         public List<Hero> Heroes { get; set; }//герои в матче(возможно стоит убрать)

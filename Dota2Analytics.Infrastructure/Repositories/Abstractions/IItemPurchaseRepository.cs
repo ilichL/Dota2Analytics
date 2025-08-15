@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Dota2Analytics.Infrastructure.Repositories.Abstractions
 {
-    public interface IIteamRepository
+    public interface IItemPurchaseRepository
     {
-        Task<List<Iteam>> GetMostBoughtIteamsOnHeroAsync(int count, string heroName);
-        Task<List<Iteam>> GetStartIteamsAsync();
+        Task<ItemPurchase?> GetPlayerWithBestBuyTimeAsync(string itemName);
+        int? EverageUsedTime(string itemName);
     }
 }

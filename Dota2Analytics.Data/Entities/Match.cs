@@ -11,12 +11,12 @@ namespace Dota2Analytics.Data.Entities
     public class Match : BaseEntity
     {
         public string SteamMatchId { get; set; }
+        public DateTime MatchDate { get; set; } 
         public int DireScore { get; set; }
         public int RadiantScore { get; set; }
         public Team WinnerTeam { get; set; }
         public int Duration { get; set; }
         public string Mode { get; set; }//турбо, ранкед и т д
-        public List<Hero> Heroes { get; set; }//герои в матче(возможно стоит убрать)
         public List<MatchPlayer> MatchPlayers { get; set; }
         public List<MatchEvent> MatchEvents { get; set; }
 

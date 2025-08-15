@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.13.35806.99
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dota2Analytics", "Dota2Analytics\Dota2Analytics.csproj", "{9A1FFE3D-2EEF-48E6-A144-148CA60B9D29}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A57FA5C6-351B-43FB-BA31-18D14CB75F0C} = {A57FA5C6-351B-43FB-BA31-18D14CB75F0C}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dota2Analytics.Data", "Dota2Analytics.Data\Dota2Analytics.Data.csproj", "{D1E147D3-E6C8-4902-A600-22C61761917A}"
 EndProject

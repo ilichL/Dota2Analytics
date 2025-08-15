@@ -21,5 +21,10 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
                 .Where(iteam => iteam.ItemPurchase.MatchPlayer.Hero.Name.Equals(heroName))
                 .Take(count).ToListAsync();
         }
+
+        public async Task<List<Iteam>> GetStartIteamsAsync()
+        {
+            return await Context.Set<Iteam>().Where(iteam => iteam.Cost <= 500).ToListAsync();
+        }
     }
 }

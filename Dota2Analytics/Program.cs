@@ -23,6 +23,9 @@ namespace Dota2Analytics
 
             builder.Services.AddScoped<IHeroRepository, HeroRepository>();
             builder.Services.AddScoped<IIteamRepository, IteamRepository>();
+            builder.Services.AddScoped<IItemPurchaseRepository, ItemPurchaseRepository>();
+            builder.Services.AddScoped<IMatchEventRepository, MatchEventRepository>();
+            builder.Services.AddScoped<IMatchRepository, MatchRepository>();
             builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
             // Строим приложение
             var app = builder.Build();

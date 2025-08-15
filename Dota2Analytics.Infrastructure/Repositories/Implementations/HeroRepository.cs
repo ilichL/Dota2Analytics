@@ -25,7 +25,7 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
             return await Context.Set<Hero>().Where(hero => hero.Role.Equals(role)).ToListAsync();
         }
         
-        public async Task<IEnumerable<Hero>> GetHeroesByBestWinRate(int count, string role)
+        public async Task<IEnumerable<Hero>> GetHeroesByBestWinRateASync(int count, string role)
         {//вернет лучших(по винрейту) саппов, коров и т д
             return await Context.Set<Hero>().Where(hero => hero.Role.Equals(role))
                 .OrderBy(hero => hero.HeroStats.WinRate).Take(count).ToListAsync();

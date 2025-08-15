@@ -10,11 +10,11 @@ namespace Dota2Analytics.Data.Entities
 {
     public class ItemPurchase : BaseEntity
     {//статистика таймингов предметов
-        public DateTime PurchaseTime { get; set; }//время покупки в матче(тайминг появления, пример бф к 30й)
+        public int PurchaseTime { get; set; }//время покупки в матче(тайминг появления, пример бф к 30й)
         public bool IsSold { get; set; }//продан ли 
-        public DateTime? SoldTime { get; set; }//время продажи в матче
+        public int? SoldTime { get; set; }//время продажи в матче
         public bool? WasEaten { get; set; }//аганим(не будет поля, если предмет не подразумевает такой возможности)
-        public DateTime? EatTime { get; set; }
+        public int? EatTime { get; set; }
         public ItemSourceType Source {  get; set; }//как получен(куплен, выбит)
         public int IteamId { get; set; }
         public Iteam Iteam { get; set; }

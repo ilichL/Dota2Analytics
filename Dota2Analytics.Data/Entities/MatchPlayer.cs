@@ -9,10 +9,11 @@ namespace Dota2Analytics.Data.Entities
 {
     public class MatchPlayer : BaseEntity
     {
+        public int? DotaBuffId { get; set; }
         public int? Kills { get; set; }
         public int? Death {  get; set; }
         public int? Assists { get; set; }
-        public int? BuildingDamage { get; set; }
+        public int? TowerDamage { get; set; }
         public int? HeroDamage { get; set; }
         public int? DamageReceivedRaw { get; set; }
         public int? DamageReceivedReduced {  get; set; }
@@ -23,10 +24,14 @@ namespace Dota2Analytics.Data.Entities
         public int? CreepsLastHit { get; set; }//добито крипов
         public int? CreepsDenies { get; set; }
         public int? BountyRunes { get; set; }
-        public int Gpm {  get; set; }//gold per minute
-        public int Xpm { get; set; }// Experience per minute
+        public decimal Gpm {  get; set; }//gold per minute
+        public decimal Xpm { get; set; }// Experience per minute
+        public decimal KillPerMinute { get; set; }
+        public decimal TowerDamagePerMinute { get; set; }
+        public decimal HeroHealingPerMinute { get; set; }
+        public decimal Kda {  get; set; }// киллы/смерти
         public int? OutpostCaptured { get; set; }//захваченные аванпосты
-        public int? Heal { get; set; }//хил тимейтам 
+        public int? HeroHealing { get; set; }//хил тимейтам 
         public int? PlayerLevel { get; set; }
         public int? MatchId { get; set; }
         public Match? Match { get; set; }

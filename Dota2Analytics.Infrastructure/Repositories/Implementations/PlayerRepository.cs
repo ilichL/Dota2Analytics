@@ -16,7 +16,7 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 
         public async Task<Player?> GetPlayerBySteamIdAsync(int SteamId)
         {
-            return await Context.Set<Player>().FirstOrDefaultAsync(player => player.Id == SteamId);
+            return await Context.Set<Player>().FirstOrDefaultAsync(player => player.SteamAccountId == SteamId);
         }
 
         public async Task<Player?> GetPlayerByNickNameAsync(string nickName)

@@ -27,7 +27,7 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 
         public async Task<TEntity> GetByIdAsync(int id)
         {
-            return await Context.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(x => x.Id == id);
+            return await Context.Set<TEntity>().AsNoTracking().FirstOrDefaultAsync(x => x.Id.Equals(id));
             await Context.SaveChangesAsync();
         }
 

@@ -17,8 +17,10 @@ namespace Dota2Analytics.Data.Entities
         public HeroTag? HeroTag { get; set; }
         public HeroRole? Role { get; set; }//керри, сап, мидер, 3ка
         public string TalentTree { get; set; }
-        public int Health { get; set; }
+        public int Health { get; set; } //базовые статы героя
+        public decimal HealthRegen { get; set; }
         public int Mana { get; set; }
+        public decimal ManaRegen { get; set; }
         public int Strength { get; set; }//сила
         public int StrengthIncrease { get; set; }
         public int Agility { get; set; }//ловкость
@@ -26,12 +28,15 @@ namespace Dota2Analytics.Data.Entities
         public int Intelligence { get; set; }//интеллект
         public int IntelligenceIncrease { get; set; }
         public string? InnateAbility { get; set; }//врожденка
-        public int[] Damage { get; set; }//56-60
+        public int MinDamage { get; set; }
+        public int MaxDamage { get; set; }
         public int Armor { get; set; }
         public int AttackInterval { get; set; }
         public int AttackSpeed { get; set; }
         public int AttackRange { get; set; }
+        public int MooveSpeed { get; set; }
         public int[]? Aspect { get; set; }//максимумм 5
+        public int OpenDotaId { get; set; }
         public List<Skill> Skills { get; set; }
         public HeroStats HeroStats { get; set; }
         public MatchPlayer MatchPlayer { get; set; }

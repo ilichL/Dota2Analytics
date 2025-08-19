@@ -1,4 +1,5 @@
 ﻿using Dota2Analytics.Data.Abstractions;
+using Dota2Analytics.Data.Entities.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,6 +11,7 @@ namespace Dota2Analytics.Data.Entities
     public class MatchPlayer : BaseEntity
     {
         public int? DotaBuffId { get; set; }
+        public int Win { get; set; }//1 да 0 нет
         public int? Kills { get; set; }
         public int? Death {  get; set; }
         public int? Assists { get; set; }
@@ -26,17 +28,19 @@ namespace Dota2Analytics.Data.Entities
         public int? BountyRunes { get; set; }
         public decimal Gpm {  get; set; }//gold per minute
         public decimal Xpm { get; set; }// Experience per minute
-        public decimal KillPerMinute { get; set; }
-        public decimal TowerDamagePerMinute { get; set; }
-        public decimal HeroHealingPerMinute { get; set; }
+        public decimal? KillPerMinute { get; set; }
+        public decimal? HeroDamagePerMinute { get; set; }
+        public decimal? TowerDamagePerMinute { get; set; }
+        public decimal? HeroHealingPerMinute { get; set; }
         public decimal Kda {  get; set; }// киллы/смерти
         public int? OutpostCaptured { get; set; }//захваченные аванпосты
         public int? HeroHealing { get; set; }//хил тимейтам 
         public int? PlayerLevel { get; set; }
-        public int? MatchId { get; set; }
+        public Team Team { get; set; }
+        public Guid? MatchId { get; set; }
         public Match? Match { get; set; }
         public int PlayerId { get; set; }
-        public Player Player { get; set; }
+        public Player? Player { get; set; }
         public int HeroId { get; set; }
         public Hero Hero { get; set; }
         public List<string>? SupportContribution { get; set; }//варды, смоки 

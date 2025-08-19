@@ -10,4 +10,8 @@
     <ProjectReference Include="..\Dota2Analytics.Data\Dota2Analytics.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Services\Abstractions\" />
+  </ItemGroup>
+
 </Project>

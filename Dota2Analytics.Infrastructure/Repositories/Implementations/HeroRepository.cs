@@ -31,5 +31,9 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
                 .OrderBy(hero => hero.HeroStats.WinRate).Take(count).ToListAsync();
         }
 
+        public async Task<Hero> GetHeroByNameAsync(string heroName)
+        {
+            return await Context.Set<Hero>().Where(hero => hero.Name.Equals(heroName)).FirstOrDefaultAsync();
+        }
     }
 }

@@ -3,12 +3,16 @@ using Dota2Analytics.Data.Entities.Enums;
 using Dota2Analytics.Infrastructure.Repositories.Implementations;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.IO;
 using System.Linq;
+using System.Numerics;
 using System.Reflection.Emit;
 using System.Text;
 using System.Text.Json;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using Match = Dota2Analytics.Data.Entities.Match;
 
 namespace Dota2Analytics.Infrastructure.Services.Implementations
 {
@@ -16,6 +20,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
     {
         private readonly HttpClient httpClient;
         private readonly HeroRepository HeroRepository;
+        private readonly MatchRepository MatchRepository;
 
         public async Task UpdateHeroes()
         {
@@ -30,7 +35,6 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
             string url = "https://api.opendota.com/api/heroStats";
 
             var response = await httpClient.GetAsync(url);
-
             var jsonText = await response.Content.ReadAsStringAsync();
             var json = JsonDocument.Parse(jsonText);
 
@@ -38,6 +42,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
             json.RootElement.EnumerateArray().Select(hero => new Hero()
             {
                 Id = Guid.NewGuid(),
+                OpenDotaId = hero.GetProperty("id").GetInt32(),
                 Attribute = hero.GetProperty("primary_attr").GetString() switch
                 {
                     "agi" => HeroAttribute.Agility,
@@ -46,9 +51,42 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                     "str" => HeroAttribute.Strength
                 },
                 Name = hero.GetProperty("localized_name").GetString(),
+                AttackType = hero.GetProperty("attack_type").GetString() switch
+                {
+                    "Ranged" => AttackType.Ranged,
+                    "Melee" => AttackType.Meel
+                },
+                Roles = GetRoles(hero.GetProperty("roles").EnumerateArray().Select(role => role.ToString()).ToList()),
+                HeroTags = GetTags(hero.GetProperty("roles").EnumerateArray().Select(role => role.ToString()).ToList()),
+                DayVision = hero.GetProperty("day_vision").GetInt32(),
+                NightVision = hero.GetProperty("night_vision").GetInt32()
 
+            }).ToList();
 
-            })
+            await HeroRepository.AddRange(heroes);
+        }
+
+        public async Task GetMathPlayers(string matchId, Match match)
+        {
+            string url = $"https://api.opendota.com/api/matches/{matchId}";
+
+            var response = await httpClient.GetAsync(url);
+
+            var jsonText = await response.Content.ReadAsStringAsync();
+            var json = JsonDocument.Parse(jsonText);
+            //var matchHeroesIds = new List<int?>();
+            var matchHeroesIds = json.RootElement.GetProperty("players").EnumerateArray()
+                .Select(player =>(int?)player.GetProperty("hero_id").GetInt32()).ToList();
+            var heroesList = await HeroRepository.GetHeroesByOpenDotaIds(matchHeroesIds);
+
+            heroesList.AddRange(heroesList);
+
+            for(int i = 0; i < match.MatchPlayers.Count; i++)
+            {
+                match.MatchPlayers[i].Hero = heroesList[i];
+                match.MatchPlayers[i].HeroId = heroesList[i].Id;
+            }
+        }
 
         public async Task GetMathes(string matchId)
         {//можно спарсить benchmarks
@@ -58,12 +96,9 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
 
             var jsonText = await response.Content.ReadAsStringAsync();
             var json = JsonDocument.Parse(jsonText);
-
-
             var newMatchId = Guid.NewGuid();
-            
 
-            var match = new Match
+            var match = new Data.Entities.Match
             {
                 Id = newMatchId,
                 SteamMatchId = matchId,
@@ -72,10 +107,11 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                 RadiantScore = json.RootElement.GetProperty("radiant_score").GetInt32(),
                 Region = RegionSwitch(json.RootElement.GetProperty("region").GetInt32()),
                 Mode = GameModeSwitch(json.RootElement.GetProperty("game_mode").GetInt32()),
+
                 WinnerTeam = json.RootElement.GetProperty("radiant_win").GetBoolean() switch
                 {
                     true => Team.Radiant,
-                    false => Team.Dier
+                    false => Team.Dire
                 },
                 MatchPlayers = json.RootElement.GetProperty("players").EnumerateArray()
                 .Select(player => new MatchPlayer()
@@ -103,16 +139,28 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                     Team = player.GetProperty("isRadiant").GetBoolean() switch
                     {
                         true => Team.Radiant,
-                        false => Team.Dier
+                        false => Team.Dire
                     },
                     MatchId = newMatchId,
-                    //TowerDamagePerMinute = TowerDamage / Duration, / 60
-                    // Hero = await HeroSwitch(player.GetProperty("hero_id").GetInt32()),
-
 
                 }).ToList()
+
             };
+            var matchHeroesIds = json.RootElement.GetProperty("players").EnumerateArray()
+                .Select(player => (int?)player.GetProperty("hero_id").GetInt32()).ToList();
+            var heroesList = await HeroRepository.GetHeroesByOpenDotaIds(matchHeroesIds);
+
+            for (int i = 0; i < match.MatchPlayers.Count; i++)
+            {
+                match.MatchPlayers[i].Hero = heroesList[i];
+                match.MatchPlayers[i].HeroId = heroesList[i].Id;
+            }
+
+
+            await MatchRepository.AddAsync(match);
         }
+            
+
 
         private string RegionSwitch(int regionNumber)
         {
@@ -131,6 +179,80 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
             }
         }
 
+        private List<HeroRole?> GetRoles(List<string> roles)
+        {
+            var rolesList = new List<HeroRole?>();
+            foreach (var role in roles)
+            {
+                switch (role)
+                {
+                    case "Carry":
+                    {
+                            rolesList.Add(HeroRole.Carry);
+                            break;
+                    }
+
+                    case "Support":
+                    {
+                            rolesList.Add(HeroRole.Support);
+                            break;
+                    }
+
+                    default: break;
+                }
+
+            }
+
+            return rolesList;
+        }
+
+        private List<HeroTag?> GetTags(List<string> tags)
+        {
+            var tagsList = new List<HeroTag?>();
+            foreach (var tag in tags)
+            {
+                switch (tag)
+                {
+                    case "Durable":
+                    {
+                            tagsList.Add(HeroTag.Durable);
+                            break;
+                    }
+
+                    case "Initiator":
+                    {
+                            tagsList.Add(HeroTag.Initiation);
+                            break;
+                    }
+
+                    case "Disabler":
+                    {
+                            tagsList.Add(HeroTag.Disable);
+                            break;
+                    }
+
+                    case "Escape":
+                    {
+                            tagsList.Add(HeroTag.Escape);
+                            break;
+                    }
+
+                    case "Nuker":
+                    {
+                            tagsList.Add(HeroTag.Nuker);
+                            break;
+                    }
+
+                    case "Pusher":
+                    {
+                            tagsList.Add(HeroTag.Pusher);
+                            break;
+                    }
+                }
+            }
+
+            return tagsList;
+        }
        
     }
 }

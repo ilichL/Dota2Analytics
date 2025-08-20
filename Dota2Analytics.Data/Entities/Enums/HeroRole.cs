@@ -9,9 +9,11 @@ namespace Dota2Analytics.Data.Entities.Enums
     public enum HeroRole
     {
         HardSupport,
-        Support,
+        Support5,
         OffLane,
         MidLane,
-        SafeLane
+        SafeLane,
+        Support,
+        Carry
     }
 }

@@ -39,9 +39,9 @@ namespace Dota2Analytics.Data.Entities
         public Team Team { get; set; }
         public Guid? MatchId { get; set; }
         public Match? Match { get; set; }
-        public int PlayerId { get; set; }
+        public Guid? PlayerId { get; set; }
         public Player? Player { get; set; }
-        public int HeroId { get; set; }
+        public Guid HeroId { get; set; }
         public Hero Hero { get; set; }
         public List<string>? SupportContribution { get; set; }//варды, смоки 
         public List<ItemPurchase>? ItemPurchase { get; set; }

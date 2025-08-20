@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 {
@@ -22,18 +23,64 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 
         public async Task<IEnumerable<Hero>> GetHeroesByRoleAsync(string role)
         {
-            return await Context.Set<Hero>().Where(hero => hero.Role.Equals(role)).ToListAsync();
+            var heroRole = SwitchRole(role);
+            return await Context.Set<Hero>().Where(hero => hero.Roles.Contains(heroRole)).ToListAsync();
         }
         
         public async Task<IEnumerable<Hero>> GetHeroesByBestWinRateASync(int count, string role)
         {//вернет лучших(по винрейту) саппов, коров и т д
-            return await Context.Set<Hero>().Where(hero => hero.Role.Equals(role))
+            var heroRole = SwitchRole(role);
+            return await Context.Set<Hero>().Where(hero => hero.Roles.Contains(heroRole))
                 .OrderBy(hero => hero.HeroStats.WinRate).Take(count).ToListAsync();
         }
 
         public async Task<Hero> GetHeroByNameAsync(string heroName)
         {
             return await Context.Set<Hero>().Where(hero => hero.Name.Equals(heroName)).FirstOrDefaultAsync();
+        }
+
+        public async Task<List<Hero>> GetHeroesByOpenDotaIds(List<int?> ids)
+        {
+            return await Context.Set<Hero>().Where(hero => ids.Contains(hero.OpenDotaId)).AsNoTracking().ToListAsync();
+        }
+
+        private HeroRole? SwitchRole(string role)
+        {
+            switch (role)
+            {
+                case "HardSupport":
+                {
+                    return HeroRole.HardSupport;
+                }
+                case "Support5":
+                {
+                    return HeroRole.Support5;
+                }
+                case "OffLane":
+                {
+                    return HeroRole.Support5;
+                }
+                case "MidLane":
+                {
+                    return HeroRole.Support5;
+                    }
+                case "SafeLane":
+                {
+                    return HeroRole.Support5;
+                }
+                case "Support":
+                {
+                    return HeroRole.Support;
+                }
+                case "Carry":
+                {
+                    return HeroRole.Carry;
+                }
+                default:
+                {
+                    return null;
+                }
+            }
         }
     }
 }

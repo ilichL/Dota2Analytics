@@ -39,7 +39,13 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 
         public async Task AddAsync(TEntity entity)
         {
-            await Context.Set<TEntity>().AddRangeAsync(entity);
+            await Context.Set<TEntity>().AddAsync(entity);
+            await Context.SaveChangesAsync();
+        }
+
+        public async Task AddRange(IEnumerable<TEntity> entities)
+        {
+            await Context.Set<TEntity>().AddRangeAsync();
             await Context.SaveChangesAsync();
         }
 

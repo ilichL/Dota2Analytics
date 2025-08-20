@@ -8,7 +8,7 @@ namespace Dota2Analytics.Data.Entities.Enums
 {
     public enum Team
     {
-        Dier,
+        Dire,
         Radiant
     }
 }

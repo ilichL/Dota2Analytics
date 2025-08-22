@@ -2,6 +2,7 @@ using Dota2Analytics.Data;
 using Microsoft.EntityFrameworkCore;
 using Dota2Analytics.Infrastructure.Repositories.Abstractions;
 using Dota2Analytics.Infrastructure.Repositories.Implementations;
+using Serilog;
 
 namespace Dota2Analytics
 {
@@ -9,12 +10,17 @@ namespace Dota2Analytics
     {
         public static void Main(string[] args)
         {
-            var builder = WebApplication.CreateBuilder(args);
+            Log.Logger = new LoggerConfiguration()
+                .WriteTo.Console()
+                .WriteTo.File("log.txt")
+                .CreateLogger();
 
+            var builder = WebApplication.CreateBuilder(args);
             // Add services to the container.
             builder.Services.AddControllers();
             builder.Services.AddEndpointsApiExplorer();
             builder.Services.AddSwaggerGen();
+
 
             // Получаем строку подключения из конфигурации
             var connectionString = builder.Configuration.GetConnectionString("Default");

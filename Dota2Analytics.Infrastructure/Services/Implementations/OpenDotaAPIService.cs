@@ -88,7 +88,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                 {
                     Id = newMatchId,
                     SteamMatchId = matchId,
-                    Duration = json.RootElement.GetProperty("duration").GetInt32(),//в секундах
+                    Duration = json.RootElement.GetProperty("duration   ").GetInt32(),//в секундах
                     DireScore = json.RootElement.GetProperty("dire_score").GetInt32(),
                     RadiantScore = json.RootElement.GetProperty("radiant_score").GetInt32(),
                     Region = RegionSwitch(json.RootElement.GetProperty("region").GetInt32()),

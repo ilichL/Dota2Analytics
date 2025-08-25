@@ -1,10 +1,13 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using Dota2Analytics.Data.Entities;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Dota2Analytics.Infrastructure.Services.Implementations
@@ -21,7 +24,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
             steamApiKey = config["SteamApiKey"];
         }
 
-        public async Task GEtMatches()
+        public async Task<List<int>?> GEtMatchIdesAsync()
         {//будет постоянно кидать этот запрос для актуализации матчей(нужен делей)
             string url = $"https://api.steampowered.com/IDOTA2Match_570/GetMatchHistory/V1/?key={steamApiKey}";
             var responce = await httpClient.GetAsync(url);
@@ -29,10 +32,38 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
             var json = JsonDocument.Parse(jsonText);
             var result = json.RootElement.GetProperty("result");
             int status = result.GetProperty("status").GetInt32();
+            var matchListIdes = new List<int>();
+
+            int Parsenumber = result.GetProperty("matches").EnumerateArray().Last().GetProperty("match_seq_num").GetInt32();
+            //номер послднего матча, от которого нужно будт начинать парсить СДЕЛАТЬ ТАБЛИЦУ
 
             if(CheckResultSuccess(status, url))
             {//проверка на BadRequest
 
+                matchListIdes = result.GetProperty("matches").EnumerateArray()
+                    .Select(match => match.GetProperty("match_id").GetInt32()).ToList();
+
+                return matchListIdes;
+            }
+
+            logger.LogError("SteamWebAPIService problems with function GEtMatches()");
+            return null;
+        }
+
+        public async Task ParseMatchesByIdesAsync(List<int>? matchListIdes)
+        {
+            if(matchListIdes is not null)
+            {
+                await Task.Delay(600000);//10 минут чтобы матчи успели догрузиться
+                foreach( var matchId in matchListIdes)
+                {
+                    string url = $"https://api.steampowered.com/IDOTA2Match_570/GetMatchDetails/V1/?key={steamApiKey}&match_id={matchId}";
+                    var response = await httpClient.GetAsync(url);
+                    var jsonText = await response.Content.ReadAsStringAsync();
+                    var json = JsonDocument.Parse(jsonText);
+
+                }
+                
             }
         }
 

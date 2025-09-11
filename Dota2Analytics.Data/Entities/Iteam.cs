@@ -1,10 +1,5 @@
 ﻿using Dota2Analytics.Data.Abstractions;
 using Dota2Analytics.Data.Entities.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dota2Analytics.Data.Entities
 {
@@ -21,7 +16,7 @@ namespace Dota2Analytics.Data.Entities
         public string? Type { get; set; }//пассивный, ненаправленный, направленный на существо
         public int? RecipeCost { get; set; }
         public int? ManaCost { get; set; }
-        public int? Cooldown {  get; set; }
+        public int? Cooldown { get; set; }
         public List<Iteam>? ParentIteams { get; set; }//предметы из которых был создан
         public List<Iteam>? UsedInItems { get; set; }//предметы в которые потанцевально может собраться 
         public int? IteamPurchaseId { get; set; }

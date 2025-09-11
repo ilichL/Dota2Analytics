@@ -1,10 +1,5 @@
 ﻿using Dota2Analytics.Data.Abstractions;
 using Dota2Analytics.Data.Entities.Enums;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Dota2Analytics.Data.Entities
 {
@@ -15,7 +10,7 @@ namespace Dota2Analytics.Data.Entities
         public int? SoldTime { get; set; }//время продажи в матче
         public bool? WasEaten { get; set; }//аганим(не будет поля, если предмет не подразумевает такой возможности)
         public int? EatTime { get; set; }
-        public ItemSourceType Source {  get; set; }//как получен(куплен, выбит)
+        public ItemSourceType Source { get; set; }//как получен(куплен, выбит)
         public int IteamId { get; set; }
         public Iteam Iteam { get; set; }
         public int MatchPlayerId { get; set; }

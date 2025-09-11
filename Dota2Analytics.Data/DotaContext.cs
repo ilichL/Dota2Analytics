@@ -14,8 +14,17 @@ namespace Dota2Analytics.Data
         public DbSet<MatchPlayer> MatchPlayers { get; set; }
         public DbSet<Player> Players { get; set; }
         public DbSet<Skill> Skills { get; set; }
+        public DbSet<RequestLog> RequestLogs { get; set; }
         public DotaContext(DbContextOptions<DotaContext> options)
             : base((options)) { }
+
+        /*
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {//оптимизирует запросы и место, выделяемое для таблиц в бд
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.ApplyConfiguration(new RequestLogConfiguration());//сделать
+        }*/
 
         protected override void ConfigureConventions(ModelConfigurationBuilder configurationBuilder)
         {

@@ -1,7 +1,8 @@
 using Dota2Analytics.Data;
-using Microsoft.EntityFrameworkCore;
 using Dota2Analytics.Infrastructure.Repositories.Abstractions;
 using Dota2Analytics.Infrastructure.Repositories.Implementations;
+using Dota2Analytics.Middleware;
+using Microsoft.EntityFrameworkCore;
 using Serilog;
 
 namespace Dota2Analytics
@@ -27,6 +28,7 @@ namespace Dota2Analytics
             builder.Services.AddDbContext<DotaContext>(options =>
                 options.UseNpgsql(connectionString));
 
+            builder.Services.AddScoped<LoggingMiddleware>();
             builder.Services.AddScoped<IHeroRepository, HeroRepository>();
             builder.Services.AddScoped<IIteamRepository, IteamRepository>();
             builder.Services.AddScoped<IItemPurchaseRepository, ItemPurchaseRepository>();
@@ -59,6 +61,7 @@ namespace Dota2Analytics
                 }
             }
 
+            app.UseMiddleware<LoggingMiddleware>();
             app.UseHttpsRedirection();
             app.UseAuthorization();
             app.MapControllers();

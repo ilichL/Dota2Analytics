@@ -1,6 +1,0 @@
-@Dota2Analytics_HostAddress = http://localhost:5248
-
-GET {{Dota2Analytics_HostAddress}}/weatherforecast/
-Accept: application/json
-
-###

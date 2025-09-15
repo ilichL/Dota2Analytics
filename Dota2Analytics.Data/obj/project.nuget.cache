@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "NialUZoS3+k=",
+  "dgSpecHash": "Unl5JQ/47vU=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj",
+  "projectFilePath": "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ilich\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\ilich\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\7.0.0\\microsoft.bcl.asyncinterfaces.7.0.0.nupkg.sha512",

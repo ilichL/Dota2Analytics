@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj": {}
+    "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj": {
+    "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj",
+        "projectUniqueName": "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj",
         "projectName": "Dota2Analytics.Data",
-        "projectPath": "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj",
+        "projectPath": "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\Dota2Analytics\\Dota2Analytics.Data\\Dota2Analytics.Data.csproj",
         "packagesPath": "C:\\Users\\ilich\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\work\\04.08.25\\test\\Dota2Analytics\\Dota2Analytics.Data\\obj\\",
+        "outputPath": "C:\\Users\\ilich\\OneDrive\\Рабочий стол\\Dota2Analytics\\Dota2Analytics.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -1,6 +1,0 @@
-services:
-  dota2analytics:
-    image: ${DOCKER_REGISTRY-}dota2analytics
-    build:
-      context: .
-      dockerfile: Dota2Analytics/Dockerfile

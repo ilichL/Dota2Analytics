@@ -1,6 +1,40 @@
+version: '3.8'
+
 services:
+  # PostgreSQL база данных
+  postgresql:
+    image: postgres:16
+    container_name: dota2analytics_db
+    environment:
+      POSTGRES_DB: dota2analytics
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # .NET приложение
   dota2analytics:
-    image: ${DOCKER_REGISTRY-}dota2analytics
     build:
-      context: .
-      dockerfile: Dota2Analytics/Dockerfile
+      context: . 
+      dockerfile: Dockerfile 
+    container_name: dota2analytics_app
+    ports:
+      - "8080:8080"
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ConnectionStrings__DefaultConnection=Host=postgresql;Port=5432;Database=dota2analytics;Username=postgres;Password=password123;
+      - SteamApi__ApiKey=${STEAM_API_KEY}
+    depends_on:
+      postgresql:
+        condition: service_healthy
+    restart: unless-stopped
+
+volumes:
+  postgres_data:

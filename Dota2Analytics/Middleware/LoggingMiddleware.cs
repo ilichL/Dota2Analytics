@@ -10,10 +10,10 @@ namespace Dota2Analytics.Middleware
         private readonly RequestDelegate nextMiddleware;
         private readonly ILogger<LoggingMiddleware> logger;
 
-        public LoggingMiddleware(RequestDelegate next, ILogger<LoggingMiddleware> logger)
+        public LoggingMiddleware(RequestDelegate next, ILogger<LoggingMiddleware> _logger)
         {
             nextMiddleware = next;
-            this.logger = logger;
+            logger = _logger;
         }
 
         public async Task InvokeAsync(HttpContext context, DotaContext dbContext)

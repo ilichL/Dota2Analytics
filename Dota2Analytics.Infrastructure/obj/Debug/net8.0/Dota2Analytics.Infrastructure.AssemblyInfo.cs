@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Dota2Analytics.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+13345989e0dfef6100d571099b1e132a90347ed4")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8dc49b8da42d60ad38a45d0ef847ef251eb07d20")]
 [assembly: System.Reflection.AssemblyProductAttribute("Dota2Analytics.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Dota2Analytics.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

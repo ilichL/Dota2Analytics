@@ -12,7 +12,7 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 {
     public class MatchEventRepository : RepositoryBase<MatchEvent>, IMatchEventRepository
     {
-        MatchEventRepository(DotaContext context) : base(context) { }
+        public MatchEventRepository(DotaContext context) : base(context) { }
 
         public async Task<Match?> GetMatchBySteanIdAsync(string steamId)
         {

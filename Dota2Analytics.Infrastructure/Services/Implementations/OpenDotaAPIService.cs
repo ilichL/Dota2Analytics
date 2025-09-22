@@ -1,5 +1,6 @@
 ﻿using Dota2Analytics.Data.Entities;
 using Dota2Analytics.Data.Entities.Enums;
+using Dota2Analytics.Infrastructure.Repositories.Abstractions;
 using Dota2Analytics.Infrastructure.Repositories.Implementations;
 using Microsoft.Extensions.Logging;
 using System.Data;
@@ -10,16 +11,51 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
     public class OpenDotaAPIService
     {
         private readonly HttpClient httpClient;
-        private readonly HeroRepository HeroRepository;
-        private readonly MatchRepository MatchRepository;
+        private readonly IHeroRepository heroRepository;
+        private readonly IMatchRepository matchRepository;
         private readonly ILogger<OpenDotaAPIService> logger;
+        private readonly IPlayerRepository playerRepository;
+
+
+        public OpenDotaAPIService(HttpClient httpClient, IHeroRepository heroRepository, IMatchRepository matchRepository, ILogger<OpenDotaAPIService> logger)
+        {
+            this.httpClient = httpClient;
+            heroRepository = heroRepository;
+            matchRepository = matchRepository;
+            this.logger = logger;
+        }
 
         public async Task UpdtaePlayer(string steamAccountId)
         {
-            string url = $"https://api.opendota.com/api/players/{steamAccountId}";
-            var response = await httpClient.GetAsync(url);
-            var jsonText = await response.Content.ReadAsStringAsync();
-            var json = JsonDocument.Parse(jsonText);
+            try
+            {
+                var openDotaId = GetOpenDotaId(steamAccountId);
+                string url = $"https://api.opendota.com/api/players/{openDotaId}";
+                var response = await httpClient.GetAsync(url);
+                var jsonText = await response.Content.ReadAsStringAsync();
+                var json = JsonDocument.Parse(jsonText);
+                var player = await playerRepository.GetPlayerBySteamIdAsync(long.Parse(steamAccountId));
+
+                var playerName = json.RootElement.GetProperty("profile").GetProperty("personaname").GetString();
+                var playerNickName = json.RootElement.GetProperty("profile").GetProperty("name").GetString(); 
+
+                if(playerName is not null)
+                {
+                    player.Name = playerNickName;
+                }
+
+                if(playerNickName is not null)
+                {
+                    player.NickName = playerNickName;
+                }
+
+                await playerRepository.UpdateAsync(player);
+            }
+
+            catch (Exception ex)
+            {
+                logger.LogError($"OpenDotaAPIService error in UpdtaePlayer, with steamAccountId = {steamAccountId} and exception: {ex}");
+            }
 
         }
 
@@ -33,7 +69,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
 
                 if(!response.IsSuccessStatusCode)
                 {
-                    logger.LogError("Error while parsing in OpendotaApiService, ParseHeroesAsync with status code: ", response.StatusCode);
+                    logger.LogError($"Error while parsing in OpendotaApiService, ParseHeroesAsync with status code: {response.StatusCode}");
                     return;
                 }
 
@@ -65,16 +101,62 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
 
                 }).ToList();
 
-                await HeroRepository.AddRange(heroes);
+                await heroRepository.AddRange(heroes);
             }
             catch (Exception ex)
             {
-                logger.LogError("OpendotaApiService, ParseHeroesAsync with error: ", ex);
+                logger.LogError($"OpendotaApiService, ParseHeroesAsync with error: {ex}"); 
             }
 
         }
 
-        public async Task GetMatheAsync(string matchId)
+        public async Task GetMathesByUserSteamId(string steamAccountId)
+        {
+            long openDotaId = GetOpenDotaId(steamAccountId);
+            string url = $"https://api.opendota.com/api/players/{steamAccountId}/matches";
+            try
+            {
+                var response = await httpClient.GetAsync(url);
+
+                if(!response.IsSuccessStatusCode)
+                {
+                    logger.LogError($"OpendotaApiService, parse match(GetMathesByUserSteamId) by url: {url}" +
+                        $"with status code: {response.StatusCode}");
+                    return;
+                }
+
+                var jsonText = await response.Content.ReadAsStringAsync();
+                var json = JsonDocument.Parse(jsonText);
+
+                var result = new List<Match>();
+
+                foreach(var jsonRoot in json.RootElement.EnumerateArray())
+                {
+                    result.Add(new Match
+                    {
+                        Id = Guid.NewGuid(),
+                        SteamMatchId = jsonRoot.GetProperty("match_id").ToString(),
+                        WinnerTeam = jsonRoot.GetProperty("radiant_win").GetBoolean() switch
+                        {
+                            false => Team.Radiant,
+                            true => Team.Dire
+                        },
+                        Mode = GameModeSwitch(jsonRoot.GetProperty("mode").GetInt32()),
+                        Duration = jsonRoot.GetProperty("duration").GetInt32()//секунды
+
+                    });
+                }
+
+
+            }
+
+            catch (Exception ex)
+            {
+                logger.LogError($"OpendotaApiService, parse match(GetMathesByUserSteamId) by url: {url}, with error:{ex}");
+            }
+        }
+
+        public async Task GetMatсhAsync(string matchId)
         {//можно спарсить benchmarks
             string url = $"https://api.opendota.com/api/matches/{matchId}";
             try
@@ -96,7 +178,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                 {
                     Id = newMatchId,
                     SteamMatchId = matchId,
-                    Duration = json.RootElement.GetProperty("duration   ").GetInt32(),//в секундах
+                    Duration = json.RootElement.GetProperty("duration").GetInt32(),//в секундах
                     DireScore = json.RootElement.GetProperty("dire_score").GetInt32(),
                     RadiantScore = json.RootElement.GetProperty("radiant_score").GetInt32(),
                     Region = RegionSwitch(json.RootElement.GetProperty("region").GetInt32()),
@@ -142,7 +224,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                 };
                 var matchHeroesIds = json.RootElement.GetProperty("players").EnumerateArray()
                     .Select(player => (int?)player.GetProperty("hero_id").GetInt32()).ToList();
-                var heroesList = await HeroRepository.GetHeroesByOpenDotaIds(matchHeroesIds);
+                var heroesList = await heroRepository.GetHeroesByOpenDotaIds(matchHeroesIds);
 
                 for (int i = 0; i < match.MatchPlayers.Count; i++)
                 {
@@ -150,11 +232,11 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                     match.MatchPlayers[i].HeroId = heroesList[i].Id;
                 }
 
-                await MatchRepository.AddAsync(match);
+                await matchRepository.AddAsync(match);
             }
             catch (Exception ex)
             {
-                logger.LogError("OpendotaApiService, parse match, with error: ", ex);
+                logger.LogError("OpendotaApiService, parse match(GetMatсhAsync), with error: ", ex);
             }
 
             
@@ -177,6 +259,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
             switch (gameModeNumber)
             {
                 case 4: return "Single Draft";
+                case 22: return "Ranked";
                 default:
                     {
                         logger.LogError("OpenDotaApiService, GameModeSwitch, with gameModeNumber: ", gameModeNumber);
@@ -260,6 +343,11 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
             }
 
             return tagsList;
+        }
+
+        private long GetOpenDotaId(string steamAccountId)
+        {      
+            return 76561198815525464 - long.Parse(steamAccountId);
         }
        
     }

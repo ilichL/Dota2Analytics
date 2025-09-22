@@ -14,24 +14,24 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
     {
         public PlayerRepository(DotaContext context) : base(context) { }
 
-        public async Task<Player?> GetPlayerBySteamIdAsync(int SteamId)
+        public async Task<Player?> GetPlayerBySteamIdAsync(long SteamId)
         {
-            return await Context.Set<Player>().FirstOrDefaultAsync(player => player.SteamAccountId == SteamId);
+            return await _context.Set<Player>().FirstOrDefaultAsync(player => player.SteamAccountId == SteamId);
         }
 
         public async Task<Player?> GetPlayerByNickNameAsync(string nickName)
         {
-            return await Context.Set<Player>().FirstOrDefaultAsync(player => player.NickName.Equals(nickName));
+            return await _context.Set<Player>().FirstOrDefaultAsync(player => player.NickName.Equals(nickName));
         }
 
         public async Task<IEnumerable<Player>> GetTopRankedPlayersAsync(int count)
         {
-            return await Context.Set<Player>().OrderBy(player => player.Rank).Take(count).ToListAsync();
+            return await _context.Set<Player>().OrderBy(player => player.Rank).Take(count).ToListAsync();
         }
 
         public async Task<IEnumerable<Player>> GetTopWinRatePlayersAsync(int count)
         {
-            return await Context.Set<Player>().OrderBy(player => player.WinRate).Take(count).ToListAsync();
+            return await _context.Set<Player>().OrderBy(player => player.WinRate).Take(count).ToListAsync();
         }
     }
 }

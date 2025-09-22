@@ -13,8 +13,8 @@ namespace Dota2Analytics.Data.Entities
         public Team WinnerTeam { get; set; }
         public int Duration { get; set; } // секунды
         public string Mode { get; set; }//турбо, ранкед и т д
-        public List<MatchPlayer> MatchPlayers { get; set; }
-        public List<MatchEvent> MatchEvents { get; set; }
+        public List<MatchPlayer>? MatchPlayers { get; set; }
+        public List<MatchEvent>? MatchEvents { get; set; }
 
     }
 }

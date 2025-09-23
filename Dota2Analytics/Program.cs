@@ -1,6 +1,8 @@
 using Dota2Analytics.Data;
 using Dota2Analytics.Infrastructure.Repositories.Abstractions;
 using Dota2Analytics.Infrastructure.Repositories.Implementations;
+using Dota2Analytics.Infrastructure.Services.Abstractions;
+using Dota2Analytics.Infrastructure.Services.Implementations;
 using Dota2Analytics.Middleware;
 using Microsoft.EntityFrameworkCore;
 using Serilog;
@@ -34,6 +36,7 @@ namespace Dota2Analytics
             builder.Services.AddScoped<IMatchEventRepository, MatchEventRepository>();
             builder.Services.AddScoped<IMatchRepository, MatchRepository>();
             builder.Services.AddScoped<IPlayerRepository, PlayerRepository>();
+            builder.Services.AddScoped<IOpenDotaAPIService, OpenDotaAPIService>();
             // Строим приложение
             var app = builder.Build();
 

@@ -31,5 +31,11 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
         {//матчи одного героя в одном режиме
             return  (await GetMathcesByUserNickNameAsync(nickName)).Where(match => match.Mode.Equals(mode)).ToList();
         }
+
+        public async Task UpdateRange(List<Match> matches)
+        {
+            _context.UpdateRange(matches);
+            await _context.SaveChangesAsync();
+        }
     }
 }

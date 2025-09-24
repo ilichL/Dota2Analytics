@@ -12,5 +12,6 @@ namespace Dota2Analytics.Infrastructure.Repositories.Abstractions
         Task AddAsync(Match entity);
         Task<List<Match>> GetMathcesByUserNickNameAsync(string nickName);
         Task<List<Match>> GetMathcesByUserNickNameWithModeAsync(string nickName, string mode);
+        Task UpdateRange(List<Match> matches);
     }
 }

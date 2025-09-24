@@ -1,6 +1,10 @@
 ﻿using Dota2Analytics.Data.Entities;
+<<<<<<< HEAD
 using Dota2Analytics.Data.Entities.Enums;
 using System.Threading.Tasks;
+=======
+using Dota2Analytics.Models.Enums;
+>>>>>>> new-version
 
 namespace Dota2Analytics.Infrastructure.Repositories.Abstractions
 {

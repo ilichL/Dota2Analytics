@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using Dota2Analytics.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 
@@ -12,38 +13,21 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Dota2Analytics.Data.Migrations
 {
     [DbContext(typeof(DotaContext))]
-    partial class DotaContextModelSnapshot : ModelSnapshot
+    [Migration("20250924113844_UpdateEntities")]
+    partial class UpdateEntities
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
-<<<<<<< HEAD
-                .HasAnnotation("ProductVersion", "9.0.8")
-=======
                 .HasAnnotation("ProductVersion", "9.0.9")
->>>>>>> new-version
                 .HasAnnotation("Relational:MaxIdentifierLength", 63);
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.Hero", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int>("Agility")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("AgilityIncrease")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Armor")
-=======
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
@@ -55,21 +39,11 @@ namespace Dota2Analytics.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int?>("Armor")
->>>>>>> new-version
                         .HasColumnType("integer");
 
                     b.PrimitiveCollection<int[]>("Aspect")
                         .HasColumnType("integer[]");
 
-<<<<<<< HEAD
-                    b.Property<int>("AttackInterval")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("AttackRange")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("AttackSpeed")
-=======
                     b.Property<int?>("AttackInterval")
                         .HasColumnType("integer");
 
@@ -77,7 +51,6 @@ namespace Dota2Analytics.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int?>("AttackSpeed")
->>>>>>> new-version
                         .HasColumnType("integer");
 
                     b.Property<int>("AttackType")
@@ -86,18 +59,6 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int>("Attribute")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-                    b.PrimitiveCollection<int[]>("Damage")
-                        .IsRequired()
-                        .HasColumnType("integer[]");
-
-                    b.Property<int>("Health")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("HeroTag")
-                        .HasColumnType("integer");
-
-=======
                     b.Property<int>("DayVision")
                         .HasColumnType("integer");
 
@@ -111,25 +72,12 @@ namespace Dota2Analytics.Data.Migrations
                         .IsRequired()
                         .HasColumnType("integer[]");
 
->>>>>>> new-version
                     b.Property<string>("ImageUrl")
                         .HasColumnType("text");
 
                     b.Property<string>("InnateAbility")
                         .HasColumnType("text");
 
-<<<<<<< HEAD
-                    b.Property<int>("Intelligence")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("IntelligenceIncrease")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Mana")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("MatchId")
-=======
                     b.Property<int?>("Intelligence")
                         .HasColumnType("integer");
 
@@ -149,26 +97,12 @@ namespace Dota2Analytics.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<int?>("MooveSpeed")
->>>>>>> new-version
                         .HasColumnType("integer");
 
                     b.Property<string>("Name")
                         .IsRequired()
                         .HasColumnType("text");
 
-<<<<<<< HEAD
-                    b.Property<int?>("Role")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("Strength")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("StrengthIncrease")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("TalentTree")
-                        .IsRequired()
-=======
                     b.Property<int>("NightVision")
                         .HasColumnType("integer");
 
@@ -186,32 +120,18 @@ namespace Dota2Analytics.Data.Migrations
                         .HasColumnType("integer");
 
                     b.Property<string>("TalentTree")
->>>>>>> new-version
                         .HasColumnType("text");
 
                     b.HasKey("Id");
 
-<<<<<<< HEAD
-                    b.HasIndex("MatchId");
-
-=======
->>>>>>> new-version
                     b.ToTable("Heroes");
                 });
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.HeroStats", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-=======
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int>("AverageGpm")
                         .HasColumnType("integer");
@@ -222,13 +142,8 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int>("BestWinStreak")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-                    b.Property<int>("HeroId")
-                        .HasColumnType("integer");
-=======
                     b.Property<Guid>("HeroId")
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int>("WinRate")
                         .HasColumnType("integer");
@@ -243,17 +158,9 @@ namespace Dota2Analytics.Data.Migrations
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.Iteam", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-=======
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int>("Ability")
                         .HasColumnType("integer");
@@ -281,13 +188,8 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<bool>("IsPossibleToEat")
                         .HasColumnType("boolean");
 
-<<<<<<< HEAD
-                    b.Property<int?>("IteamPurchaseId")
-                        .HasColumnType("integer");
-=======
                     b.Property<Guid?>("IteamPurchaseId")
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int?>("ManaCost")
                         .HasColumnType("integer");
@@ -296,12 +198,9 @@ namespace Dota2Analytics.Data.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-<<<<<<< HEAD
-=======
                     b.Property<int>("NumberOfPurchases")
                         .HasColumnType("integer");
 
->>>>>>> new-version
                     b.Property<int?>("RecipeCost")
                         .HasColumnType("integer");
 
@@ -315,35 +214,6 @@ namespace Dota2Analytics.Data.Migrations
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.ItemPurchase", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime?>("EatTime")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<bool>("IsSold")
-                        .HasColumnType("boolean");
-
-                    b.Property<int>("IteamId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("MatchEventId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("MatchPlayerId")
-                        .HasColumnType("integer");
-
-                    b.Property<DateTime>("PurchaseTime")
-                        .HasColumnType("timestamp with time zone");
-
-                    b.Property<DateTime?>("SoldTime")
-                        .HasColumnType("timestamp with time zone");
-
-=======
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
@@ -369,7 +239,6 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int?>("SoldTime")
                         .HasColumnType("integer");
 
->>>>>>> new-version
                     b.Property<int>("Source")
                         .HasColumnType("integer");
 
@@ -390,17 +259,9 @@ namespace Dota2Analytics.Data.Migrations
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.Match", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-=======
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int>("DireScore")
                         .HasColumnType("integer");
@@ -408,12 +269,9 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int>("Duration")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-=======
                     b.Property<DateTime>("MatchDate")
                         .HasColumnType("timestamp with time zone");
 
->>>>>>> new-version
                     b.Property<string>("Mode")
                         .IsRequired()
                         .HasColumnType("text");
@@ -421,13 +279,10 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int>("RadiantScore")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-=======
                     b.Property<string>("Region")
                         .IsRequired()
                         .HasColumnType("text");
 
->>>>>>> new-version
                     b.Property<string>("SteamMatchId")
                         .IsRequired()
                         .HasColumnType("text");
@@ -442,17 +297,9 @@ namespace Dota2Analytics.Data.Migrations
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.MatchEvent", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-=======
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<string>("Data")
                         .HasColumnType("text");
@@ -460,13 +307,8 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int>("EventType")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-                    b.Property<int>("MatchId")
-                        .HasColumnType("integer");
-=======
                     b.Property<Guid>("MatchId")
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int?>("RuneType")
                         .HasColumnType("integer");
@@ -480,17 +322,9 @@ namespace Dota2Analytics.Data.Migrations
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.MatchPlayer", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-=======
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int?>("Assists")
                         .HasColumnType("integer");
@@ -498,12 +332,6 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int?>("BountyRunes")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-                    b.Property<int?>("BuildingDamage")
-                        .HasColumnType("integer");
-
-=======
->>>>>>> new-version
                     b.Property<int?>("CampsStacked")
                         .HasColumnType("integer");
 
@@ -522,33 +350,15 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int?>("Death")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-                    b.Property<int>("Gpm")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("Heal")
-                        .HasColumnType("integer");
-=======
                     b.Property<int?>("DotaBuffId")
                         .HasColumnType("integer");
 
                     b.Property<decimal>("Gpm")
                         .HasColumnType("numeric");
->>>>>>> new-version
 
                     b.Property<int?>("HeroDamage")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-                    b.Property<int>("HeroId")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("Kills")
-                        .HasColumnType("integer");
-
-                    b.Property<int?>("MatchId")
-                        .HasColumnType("integer");
-=======
                     b.Property<decimal?>("HeroDamagePerMinute")
                         .HasColumnType("numeric");
 
@@ -572,7 +382,6 @@ namespace Dota2Analytics.Data.Migrations
 
                     b.Property<Guid?>("MatchId")
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int>("NetWorth")
                         .HasColumnType("integer");
@@ -583,13 +392,8 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int>("Pick")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-                    b.Property<int>("PlayerId")
-                        .HasColumnType("integer");
-=======
                     b.Property<Guid?>("PlayerId")
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int?>("PlayerLevel")
                         .HasColumnType("integer");
@@ -600,11 +404,6 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int?>("SupportGoldSpent")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-                    b.Property<int>("Xpm")
-                        .HasColumnType("integer");
-
-=======
                     b.Property<int>("Team")
                         .HasColumnType("integer");
 
@@ -620,7 +419,6 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<decimal>("Xpm")
                         .HasColumnType("numeric");
 
->>>>>>> new-version
                     b.HasKey("Id");
 
                     b.HasIndex("HeroId")
@@ -636,19 +434,6 @@ namespace Dota2Analytics.Data.Migrations
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.Player", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-
-                    b.Property<int?>("MatchEventId")
-                        .HasColumnType("integer");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-=======
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
@@ -660,7 +445,6 @@ namespace Dota2Analytics.Data.Migrations
                         .HasColumnType("uuid");
 
                     b.Property<string>("Name")
->>>>>>> new-version
                         .HasColumnType("text");
 
                     b.Property<string>("NickName")
@@ -670,13 +454,8 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<int>("Rank")
                         .HasColumnType("integer");
 
-<<<<<<< HEAD
-                    b.Property<int?>("SteamAccountId")
-                        .HasColumnType("integer");
-=======
                     b.Property<long?>("SteamAccountId")
                         .HasColumnType("bigint");
->>>>>>> new-version
 
                     b.Property<int>("WinRate")
                         .HasColumnType("integer");
@@ -688,15 +467,6 @@ namespace Dota2Analytics.Data.Migrations
                     b.ToTable("Players");
                 });
 
-<<<<<<< HEAD
-            modelBuilder.Entity("Dota2Analytics.Data.Entities.Skill", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("integer");
-
-                    NpgsqlPropertyBuilderExtensions.UseIdentityByDefaultColumn(b.Property<int>("Id"));
-=======
             modelBuilder.Entity("Dota2Analytics.Data.Entities.RequestLog", b =>
                 {
                     b.Property<Guid>("Id")
@@ -741,7 +511,6 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<string>("Affects")
                         .HasColumnType("text");
@@ -759,13 +528,8 @@ namespace Dota2Analytics.Data.Migrations
                     b.Property<bool?>("Dispellable")
                         .HasColumnType("boolean");
 
-<<<<<<< HEAD
-                    b.Property<int>("HeroId")
-                        .HasColumnType("integer");
-=======
                     b.Property<Guid>("HeroId")
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.Property<int?>("ManaCost")
                         .HasColumnType("integer");
@@ -792,19 +556,11 @@ namespace Dota2Analytics.Data.Migrations
 
             modelBuilder.Entity("IteamIteam", b =>
                 {
-<<<<<<< HEAD
-                    b.Property<int>("ParentIteamsId")
-                        .HasColumnType("integer");
-
-                    b.Property<int>("UsedInItemsId")
-                        .HasColumnType("integer");
-=======
                     b.Property<Guid>("ParentIteamsId")
                         .HasColumnType("uuid");
 
                     b.Property<Guid>("UsedInItemsId")
                         .HasColumnType("uuid");
->>>>>>> new-version
 
                     b.HasKey("ParentIteamsId", "UsedInItemsId");
 
@@ -813,16 +569,6 @@ namespace Dota2Analytics.Data.Migrations
                     b.ToTable("IteamIteam");
                 });
 
-<<<<<<< HEAD
-            modelBuilder.Entity("Dota2Analytics.Data.Entities.Hero", b =>
-                {
-                    b.HasOne("Dota2Analytics.Data.Entities.Match", null)
-                        .WithMany("Heroes")
-                        .HasForeignKey("MatchId");
-                });
-
-=======
->>>>>>> new-version
             modelBuilder.Entity("Dota2Analytics.Data.Entities.HeroStats", b =>
                 {
                     b.HasOne("Dota2Analytics.Data.Entities.Hero", "Hero")
@@ -882,13 +628,7 @@ namespace Dota2Analytics.Data.Migrations
 
                     b.HasOne("Dota2Analytics.Data.Entities.Player", "Player")
                         .WithOne("MatchPlayer")
-<<<<<<< HEAD
-                        .HasForeignKey("Dota2Analytics.Data.Entities.MatchPlayer", "PlayerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-=======
                         .HasForeignKey("Dota2Analytics.Data.Entities.MatchPlayer", "PlayerId");
->>>>>>> new-version
 
                     b.Navigation("Hero");
 
@@ -934,17 +674,9 @@ namespace Dota2Analytics.Data.Migrations
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.Hero", b =>
                 {
-<<<<<<< HEAD
-                    b.Navigation("HeroStats")
-                        .IsRequired();
-
-                    b.Navigation("MatchPlayer")
-                        .IsRequired();
-=======
                     b.Navigation("HeroStats");
 
                     b.Navigation("MatchPlayer");
->>>>>>> new-version
 
                     b.Navigation("Skills");
                 });
@@ -956,11 +688,6 @@ namespace Dota2Analytics.Data.Migrations
 
             modelBuilder.Entity("Dota2Analytics.Data.Entities.Match", b =>
                 {
-<<<<<<< HEAD
-                    b.Navigation("Heroes");
-
-=======
->>>>>>> new-version
                     b.Navigation("MatchEvents");
 
                     b.Navigation("MatchPlayers");

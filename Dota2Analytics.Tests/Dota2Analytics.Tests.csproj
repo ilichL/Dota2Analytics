@@ -7,15 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="coverlet.collector" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
 <<<<<<< HEAD
-    <ProjectReference Include="..\Dota2Analytics.Data\Dota2Analytics.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Abstractions\" />
-  </ItemGroup>
-
-  <ItemGroup>
 =======
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.9" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="9.0.9">
@@ -28,17 +24,20 @@
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.Logging.Abstractions" Version="9.0.9" />
 >>>>>>> new-version
-    <PackageReference Include="Serilog" Version="4.3.0" />
-    <PackageReference Include="Serilog.Sinks.Console" Version="6.0.0" />
-    <PackageReference Include="Serilog.Sinks.File" Version="7.0.0" />
+    <PackageReference Include="Moq" Version="4.20.72" />
+    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
-<<<<<<< HEAD
-=======
   <ItemGroup>
-    <ProjectReference Include="..\Dota2Analytics.Data\Dota2Analytics.Data.csproj" />
-    <ProjectReference Include="..\Dota2Analytics.Models\Dota2Analytics.Models.csproj" />
+<<<<<<< HEAD
+    <ProjectReference Include="..\Dota2Analytics\Dota2Analytics.Infrastructure\Dota2Analytics.Infrastructure.csproj" />
+=======
+    <ProjectReference Include="..\Dota2Analytics.Infrastructure\Dota2Analytics.Infrastructure.csproj" />
+>>>>>>> new-version
   </ItemGroup>
 
->>>>>>> new-version
 </Project>

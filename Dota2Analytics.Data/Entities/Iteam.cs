@@ -1,5 +1,9 @@
 ﻿using Dota2Analytics.Data.Abstractions;
+<<<<<<< HEAD
 using Dota2Analytics.Data.Entities.Enums;
+=======
+using Dota2Analytics.Models.Enums;
+>>>>>>> new-version
 
 namespace Dota2Analytics.Data.Entities
 {
@@ -19,7 +23,11 @@ namespace Dota2Analytics.Data.Entities
         public int? Cooldown { get; set; }
         public List<Iteam>? ParentIteams { get; set; }//предметы из которых был создан
         public List<Iteam>? UsedInItems { get; set; }//предметы в которые потанцевально может собраться 
+<<<<<<< HEAD
         public int? IteamPurchaseId { get; set; }
+=======
+        public Guid? IteamPurchaseId { get; set; }
+>>>>>>> new-version
         public ItemPurchase? ItemPurchase { get; set; }//предмет новый, статистики нет 
         public int NumberOfPurchases { get; set; }//сколько раз купили для статистики 
     }

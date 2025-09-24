@@ -1,5 +1,9 @@
 ﻿using Dota2Analytics.Data.Abstractions;
+<<<<<<< HEAD
 using Dota2Analytics.Data.Entities.Enums;
+=======
+using Dota2Analytics.Models.Enums;
+>>>>>>> new-version
 
 namespace Dota2Analytics.Data.Entities
 {

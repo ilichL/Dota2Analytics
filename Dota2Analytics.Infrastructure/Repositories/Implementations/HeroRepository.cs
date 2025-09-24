@@ -1,5 +1,6 @@
 ﻿using Dota2Analytics.Data;
 using Dota2Analytics.Data.Entities;
+<<<<<<< HEAD
 using Dota2Analytics.Data.Entities.Enums;
 using Dota2Analytics.Infrastructure.Repositories.Abstractions;
 using Microsoft.EntityFrameworkCore;
@@ -9,6 +10,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+=======
+using Dota2Analytics.Infrastructure.Repositories.Abstractions;
+using Dota2Analytics.Models.Enums;
+using Microsoft.EntityFrameworkCore;
+>>>>>>> new-version
 
 namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 {

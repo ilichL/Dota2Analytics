@@ -10,7 +10,11 @@ namespace Dota2Analytics.Data.Entities
         public long? SteamAccountId { get; set; }
         public int WinRate { get; set; }
         public int Rank { get; set; }
+<<<<<<< HEAD
         public int? MatchEventId { get; set; }
+=======
+        public Guid? MatchEventId { get; set; }
+>>>>>>> new-version
         public MatchEvent? MatchEvent { get; set; }
         public MatchPlayer? MatchPlayer { get; set; }
     }

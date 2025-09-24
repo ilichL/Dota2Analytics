@@ -1,4 +1,4 @@
-﻿namespace Dota2Analytics.Data.Entities.Enums
+﻿namespace Dota2Analytics.Models.Enums
 {
     public enum AttackType
     {

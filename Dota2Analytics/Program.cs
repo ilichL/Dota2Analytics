@@ -30,6 +30,10 @@ namespace Dota2Analytics
             builder.Services.AddDbContext<DotaContext>(options =>
                 options.UseNpgsql(connectionString));
 
+<<<<<<< HEAD
+=======
+            builder.Services.AddHttpClient();
+>>>>>>> new-version
             builder.Services.AddScoped<IHeroRepository, HeroRepository>();
             builder.Services.AddScoped<IIteamRepository, IteamRepository>();
             builder.Services.AddScoped<IItemPurchaseRepository, ItemPurchaseRepository>();

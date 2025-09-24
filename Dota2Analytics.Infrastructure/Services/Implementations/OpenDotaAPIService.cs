@@ -1,8 +1,7 @@
-﻿using Dota2Analytics.Data.Entities;
-using Dota2Analytics.Data.Entities.Enums;
+using Dota2Analytics.Data.Entities;
 using Dota2Analytics.Infrastructure.Repositories.Abstractions;
-using Dota2Analytics.Infrastructure.Repositories.Implementations;
 using Dota2Analytics.Infrastructure.Services.Abstractions;
+using Dota2Analytics.Models.Enums;
 using Dota2Analytics.Models.OpenDota;
 using Microsoft.Extensions.Logging;
 using System.Data;
@@ -13,18 +12,18 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
     public class OpenDotaAPIService : IOpenDotaAPIService
     {
         private readonly HttpClient httpClient;
-        private readonly IHeroRepository heroRepository;
-        private readonly IMatchRepository matchRepository;
+        private readonly IHeroRepository _heroRepository;
+        private readonly IMatchRepository _matchRepository;
         private readonly ILogger<OpenDotaAPIService> logger;
-        private readonly IPlayerRepository playerRepository;
+        private readonly IPlayerRepository _playerRepository;
 
-
-        public OpenDotaAPIService(HttpClient httpClient, IHeroRepository heroRepository, IMatchRepository matchRepository, ILogger<OpenDotaAPIService> logger)
+        public OpenDotaAPIService(HttpClient httpClient, IHeroRepository heroRepository, IMatchRepository matchRepository, ILogger<OpenDotaAPIService> logger, IPlayerRepository playerRepository)
         {
             this.httpClient = httpClient;
-            heroRepository = heroRepository;
-            matchRepository = matchRepository;
+            _heroRepository = heroRepository;
+            _matchRepository = matchRepository;
             this.logger = logger;
+            _playerRepository = playerRepository;
         }
 
         public async Task<OpenDotaPlayerDto>? UpdtaePlayerAsync(string steamAccountId)
@@ -36,7 +35,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                 var response = await httpClient.GetAsync(url);
                 var jsonText = await response.Content.ReadAsStringAsync();
                 var json = JsonDocument.Parse(jsonText);
-                var player = await playerRepository.GetPlayerBySteamIdAsync(long.Parse(steamAccountId));
+                var player = await _playerRepository.GetPlayerBySteamIdAsync(long.Parse(steamAccountId));//System.NullReferenceException: "Object reference not set to an instance of an object."
 
                 var playerName = json.RootElement.GetProperty("profile").GetProperty("personaname").GetString();
                 var playerNickName = json.RootElement.GetProperty("profile").GetProperty("name").GetString(); 
@@ -51,7 +50,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                     player.NickName = playerNickName;
                 }
 
-                await playerRepository.UpdateAsync(player);
+                await _playerRepository.UpdateAsync(player);
 
                 var result = new OpenDotaPlayerDto()
                 {
@@ -113,7 +112,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
 
                 }).ToList();
 
-                await heroRepository.AddRange(heroes);
+                await _heroRepository.AddRange(heroes);
 
                 var result = heroes.Select(hero => new OpenDotaHeroDto()
                 {
@@ -183,7 +182,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                     });
                 }
 
-                await matchRepository.UpdateRange(playerMatches);
+                await _matchRepository.UpdateRange(playerMatches);
 
                 var result = playerMatches.Select(match => new OpenDotaMatch()
                 {
@@ -275,7 +274,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                 };
                 var matchHeroesIds = json.RootElement.GetProperty("players").EnumerateArray()
                     .Select(player => (int?)player.GetProperty("hero_id").GetInt32()).ToList();
-                var heroesList = await heroRepository.GetHeroesByOpenDotaIds(matchHeroesIds);
+                var heroesList = await _heroRepository.GetHeroesByOpenDotaIds(matchHeroesIds);
 
                 for (int i = 0; i < match.MatchPlayers.Count; i++)
                 {
@@ -283,7 +282,7 @@ namespace Dota2Analytics.Infrastructure.Services.Implementations
                     match.MatchPlayers[i].HeroId = heroesList[i].Id;
                 }
 
-                await matchRepository.AddAsync(match);
+                await _matchRepository.AddAsync(match);
             }
             catch (Exception ex)
             {

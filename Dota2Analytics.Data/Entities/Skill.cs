@@ -15,6 +15,10 @@ namespace Dota2Analytics.Data.Entities
         public int? Cooldown { get; set; }
         public string Description { get; set; }
         public Hero Hero { get; set; }
+<<<<<<< HEAD
         public int HeroId { get; set; }
+=======
+        public Guid HeroId { get; set; }
+>>>>>>> new-version
     }
 }

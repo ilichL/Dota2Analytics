@@ -1,5 +1,9 @@
 ﻿using Dota2Analytics.Data.Entities;
 using Microsoft.EntityFrameworkCore;
+<<<<<<< HEAD
+=======
+using Dota2Analytics.Models.Enums;
+>>>>>>> new-version
 
 namespace Dota2Analytics.Data
 {
@@ -17,7 +21,10 @@ namespace Dota2Analytics.Data
         public DbSet<RequestLog> RequestLogs { get; set; }
         public DotaContext(DbContextOptions<DotaContext> options)
             : base((options)) { }
+<<<<<<< HEAD
 
+=======
+>>>>>>> new-version
         /*
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {//оптимизирует запросы и место, выделяемое для таблиц в бд

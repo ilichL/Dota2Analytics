@@ -1,5 +1,9 @@
 ﻿using Dota2Analytics.Data.Abstractions;
+<<<<<<< HEAD
 using Dota2Analytics.Data.Entities.Enums;
+=======
+using Dota2Analytics.Models.Enums;
+>>>>>>> new-version
 
 namespace Dota2Analytics.Data.Entities
 {
@@ -35,7 +39,11 @@ namespace Dota2Analytics.Data.Entities
         public int DayVision { get; set; }
         public int NightVision { get; set; }
         public List<Skill>? Skills { get; set; }
+<<<<<<< HEAD
         public HeroStats? HeroStats { get; set; }
+=======
+        public virtual HeroStats? HeroStats { get; set; }
+>>>>>>> new-version
         public MatchPlayer? MatchPlayer { get; set; }
     }
 }

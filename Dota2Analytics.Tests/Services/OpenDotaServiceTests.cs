@@ -1,11 +1,10 @@
-﻿using Dota2Analytics.Data.Entities;
-using Dota2Analytics.Data.Entities.Enums;
+using Dota2Analytics.Data.Entities;
+using Dota2Analytics.Models.Enums;
 using Dota2Analytics.Infrastructure.Repositories.Implementations;
 using Dota2Analytics.Infrastructure.Services.Implementations;
 using Microsoft.Extensions.Logging;
 using Moq;
 using Moq.Protected;
-
 using System.Net;
 using System.Text;
 using System.Text.Json;
@@ -40,8 +39,7 @@ public class OpenDotaAPIServiceTests
     }
 
     [Fact] //это тест
-
-    public void UpdatePlayerEmptySteamAccount()
+    public async Task UpdatePlayerEmptySteamAccount()
     {
         //Arrange
         var httpMessageHandlerMock = new Mock<HttpMessageHandler>();
@@ -53,7 +51,7 @@ public class OpenDotaAPIServiceTests
         string steamAccountId = "";
 
         //Act
-        openDotaApiService.UpdtaePlayer("steamAccountId");
+        await openDotaApiService.UpdtaePlayerAsync("steamAccountId");
 
         //Assert
         _loggerMock.Verify(logger => logger.LogError(

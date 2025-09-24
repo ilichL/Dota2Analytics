@@ -1,5 +1,9 @@
 ﻿using Dota2Analytics.Data;
 using Dota2Analytics.Data.Entities;
+<<<<<<< HEAD
+=======
+using Dota2Analytics.Models.Enums;
+>>>>>>> new-version
 using System;
 using System.Diagnostics;
 
@@ -21,7 +25,11 @@ namespace Dota2Analytics.Middleware
             var requestLog = new RequestLog
             {
                 Path = context.Request.Path,
+<<<<<<< HEAD
                 Method = new HttpMethod(context.Request.Method),
+=======
+                Method = Enum.Parse<HttpMethodType>(context.Request.Method.ToUpper()),
+>>>>>>> new-version
                 QueryString = context.Request.QueryString.Value,
                 ClientIP = context.Connection.RemoteIpAddress?.ToString(),
                 UserAgent = context.Request.Headers["User-Agent"].ToString(),

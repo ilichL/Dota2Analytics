@@ -9,7 +9,10 @@ namespace Dota2Analytics.Infrastructure.Repositories.Abstractions
 {
     public interface IMatchRepository
     {
+        Task AddRange(IEnumerable<Match> entities);
+        Task AddAsync(Match entity);
         Task<List<Match>> GetMathcesByUserNickNameAsync(string nickName);
         Task<List<Match>> GetMathcesByUserNickNameWithModeAsync(string nickName, string mode);
+        Task UpdateRange(List<Match> matches);
     }
 }

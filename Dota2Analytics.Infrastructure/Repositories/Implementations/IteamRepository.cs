@@ -16,7 +16,7 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 
         public async Task<List<Iteam>> GetMostBoughtIteamsOnHeroAsync(int count, string heroName)
         {
-            return await Context.Set<Iteam>()
+            return await _context.Set<Iteam>()
                 .OrderBy(iteam => iteam.NumberOfPurchases)
                 .Where(iteam => iteam.ItemPurchase.MatchPlayer.Hero.Name.Equals(heroName))
                 .Take(count).ToListAsync();
@@ -24,7 +24,7 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 
         public async Task<List<Iteam>> GetStartIteamsAsync()
         {
-            return await Context.Set<Iteam>().Where(iteam => iteam.Cost <= 500).ToListAsync();
+            return await _context.Set<Iteam>().Where(iteam => iteam.Cost <= 500).ToListAsync();
         }
     }
 }

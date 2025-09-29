@@ -2,7 +2,7 @@
 {
     public enum AttackType
     {
-        Meel,//ближний
+        Melee,//ближний
         Ranged //дальний
     }
 }

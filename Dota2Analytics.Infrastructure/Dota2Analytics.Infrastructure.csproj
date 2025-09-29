@@ -7,11 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Dota2Analytics.Models\Dota2Analytics.Models.csproj" />
     <ProjectReference Include="..\Dota2Analytics.Data\Dota2Analytics.Data.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Services\Abstractions\" />
   </ItemGroup>
 
   <ItemGroup>

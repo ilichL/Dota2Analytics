@@ -16,13 +16,13 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 
         public async Task<ItemPurchase?> GetPlayerWithBestBuyTimeAsync(string itemName)
         {
-            return await Context.Set<ItemPurchase>().Where(iteam => iteam.Iteam.Name.Equals(itemName))
+            return await _context.Set<ItemPurchase>().Where(iteam => iteam.Iteam.Name.Equals(itemName))
                 .OrderBy(iteam => iteam.PurchaseTime).FirstOrDefaultAsync();
         }
 
         public int? EverageUsedTime(string itemName)
         {
-            var iteams = Context.Set<ItemPurchase>().Where(iteam => iteam.Iteam.Name.Equals(itemName));
+            var iteams = _context.Set<ItemPurchase>().Where(iteam => iteam.Iteam.Name.Equals(itemName));
             int? everageTime = null;
             foreach (var iteam in iteams)
             {

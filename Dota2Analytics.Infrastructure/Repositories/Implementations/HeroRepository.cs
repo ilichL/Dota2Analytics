@@ -18,30 +18,30 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 
         public async Task<IEnumerable<Hero>> GetHeroesByAttributeAsync(HeroAttribute attribute)//интовики, силовики
         {
-            return await Context.Set<Hero>().Where(hero => hero.Attribute == attribute).ToListAsync();
+            return await _context.Set<Hero>().Where(hero => hero.Attribute == attribute).ToListAsync();
         }
 
         public async Task<IEnumerable<Hero>> GetHeroesByRoleAsync(string role)
         {
             var heroRole = SwitchRole(role);
-            return await Context.Set<Hero>().Where(hero => hero.Roles.Contains(heroRole)).ToListAsync();
+            return await _context.Set<Hero>().Where(hero => hero.Roles.Contains(heroRole)).ToListAsync();
         }
         
         public async Task<IEnumerable<Hero>> GetHeroesByBestWinRateASync(int count, string role)
         {//вернет лучших(по винрейту) саппов, коров и т д
             var heroRole = SwitchRole(role);
-            return await Context.Set<Hero>().Where(hero => hero.Roles.Contains(heroRole))
+            return await _context.Set<Hero>().Where(hero => hero.Roles.Contains(heroRole))
                 .OrderBy(hero => hero.HeroStats.WinRate).Take(count).ToListAsync();
         }
 
         public async Task<Hero> GetHeroByNameAsync(string heroName)
         {
-            return await Context.Set<Hero>().Where(hero => hero.Name.Equals(heroName)).FirstOrDefaultAsync();
+            return await _context.Set<Hero>().Where(hero => hero.Name.Equals(heroName)).FirstOrDefaultAsync();
         }
 
         public async Task<List<Hero>> GetHeroesByOpenDotaIds(List<int?> ids)
         {
-            return await Context.Set<Hero>().Where(hero => ids.Contains(hero.OpenDotaId)).AsNoTracking().ToListAsync();
+            return await _context.Set<Hero>().Where(hero => ids.Contains(hero.OpenDotaId)).AsNoTracking().ToListAsync();
         }
 
         private HeroRole? SwitchRole(string role)

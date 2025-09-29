@@ -16,12 +16,12 @@ namespace Dota2Analytics.Infrastructure.Repositories.Implementations
 
         public async Task<Match?> GetMatchBySteanIdAsync(string steamId)
         {
-            return await Context.Set<Match>().Where(match => match.SteamMatchId.Equals(steamId)).FirstOrDefaultAsync();
+            return await _context.Set<Match>().Where(match => match.SteamMatchId.Equals(steamId)).FirstOrDefaultAsync();
         }
 
         public async Task<List<Match>> GetMatchesWithEventsAsync(List<MatchEvent> matchEvents)
         {
-            return await Context.Set<Match>()
+            return await _context.Set<Match>()
                 .Where(match => matchEvents.All(me => match.MatchEvents.Contains(me)))
                 .ToListAsync();
         }
